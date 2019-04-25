@@ -103,15 +103,7 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  return arr.sort((a, b) => {
-    if(a.lastName < b.lastName){
-      return -1;
-    }else if(a.lastName === b.lastName){
-      return 0;
-    }else{
-      return 1;
-    }
-  });
+  return arr.sort((a, b) => a.lastName.localeCompare(b.lastName));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,30 +117,8 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  return arr.sort( (a, b) => {
-    if(a.lastName < b.lastName){
-      return -1;
-    }else if(a.lastName === b.lastName){
-      //sort on firstname if lastname is the same
-      if(a.firstName < b.firstName){
-        return -1;
-      }else if(a.firstName === b.firstName)
-      {
-        //sort on age if fullname is match
-        if(a.age < b.age){
-          return -1;
-        }else if(a.age === b.age){
-          return 0;
-        }else{
-          return 1;
-        }
-      }else{
-        return 1;
-      }
-    }else{
-      return 1;
-    }
-  });
+  // LOL //
+  return arr.sort( (a, b) => (a.lastName.localeCompare(b.lastName) !== 0 ? a.lastName.localeCompare(b.lastName) : a.firstName.localeCompare(b.firstName) !== 0 ? a.firstName.localeCompare(b.firstName) : a.age - b.age));
 };
 
 /* ------------------------------------------------------------------------------------------------
