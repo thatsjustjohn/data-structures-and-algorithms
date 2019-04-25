@@ -6,9 +6,7 @@ CHALLENGE 1
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) => {
-  return arr.sort((a, b) => b - a);
-};
+const sortBackwards = (arr) => arr.sort((a, b) => b - a);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -20,9 +18,7 @@ In this alphabetization, capital letters come before lower case letters.
 For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetize = (arr) => {
-  return arr.sort();
-};
+const alphabetize = (arr) => arr.sort();
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -30,9 +26,7 @@ CHALLENGE 3
 Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortByLength = (arr) => {
-  return arr.sort((a, b) => a.length - b.length);
-};
+const sortByLength = (arr) => arr.sort((a, b) => a.length - b.length);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -42,17 +36,7 @@ Write a function named alphabetizeBetter that takes in an array of strings and r
 For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetizeBetter = (arr) => {
-  return arr.sort((a, b) => {
-    if(a.toLowerCase() < b.toLowerCase()){
-      return -1;
-    }else if(a.toLowerCase() === b.toLowerCase()){
-      return 0;
-    }else{
-      return 1;
-    }
-  });
-};
+const alphabetizeBetter = (arr) => arr.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -67,9 +51,7 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const sortByPrice = (arr) => {
-  return arr.sort((a, b) => a.price - b.price);
-};
+const sortByPrice = (arr) =>  arr.sort((a, b) => a.price - b.price);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -79,9 +61,7 @@ Write a function named sortNumbersByLength that takes in an array of numbers and
 For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
-const sortNumbersByLength = (arr) => {
-  return arr.sort((a, b) => a.toString().length - b.toString().length);
-};
+const sortNumbersByLength = (arr) => arr.sort((a, b) => a.toString().length - b.toString().length);
 
 
 /*-----------------------------------------------------------------------------------------------
@@ -102,9 +82,7 @@ const people = [
   new Person('Stan', 'Seattle', 67),
 ];
 
-const sortPeople = (arr) => {
-  return arr.sort((a, b) => a.lastName.localeCompare(b.lastName));
-};
+const sortPeople = (arr) => arr.sort((a, b) => a.lastName.localeCompare(b.lastName));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
@@ -116,10 +94,7 @@ If two people share the same last name, alphabetize on their first name.
 If two people have the same full name, the younger one should come first. Do not worry about capitalization.
 ------------------------------------------------------------------------------------------------ */
 
-const sortPeopleBetter = (arr) => {
-  // LOL //
-  return arr.sort( (a, b) => (a.lastName.localeCompare(b.lastName) !== 0 ? a.lastName.localeCompare(b.lastName) : a.firstName.localeCompare(b.firstName) !== 0 ? a.firstName.localeCompare(b.firstName) : a.age - b.age));
-};
+const sortPeopleBetter = (arr) => arr.sort( (a, b) => (a.lastName.localeCompare(b.lastName) !== 0 ? a.lastName.localeCompare(b.lastName) : a.firstName.localeCompare(b.firstName) !== 0 ? a.firstName.localeCompare(b.firstName) : a.age - b.age));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -142,11 +117,10 @@ const meetings = [
   new Meeting('Monday', '0900', '0945'),
   new Meeting('Friday', '1200', '1345'),
 ];
+// NEED DIS
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const sortMeetingsByDay = (arr) => arr.sort( (a, b) => days.indexOf(a.dayOfWeek) - days.indexOf(b.dayOfWeek));
 
-const sortMeetingsByDay = (arr) => {
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  return arr.sort( (a, b) => days.indexOf(a.dayOfWeek) - days.indexOf(b.dayOfWeek));
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -158,16 +132,7 @@ Sort the meetings in the order that they start. If two meetings start at the sam
 You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
-const sortSchedule = (arr) => {
-  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  return arr.sort( (a, b) => {
-    let diff = days.indexOf(a.dayOfWeek) - days.indexOf(b.dayOfWeek);
-    if(diff === 0){
-      diff = (parseInt(a.end) - parseInt(a.start)) - (parseInt(b.end) - parseInt(b.start));
-    }
-    return diff;
-  });
-};
+const sortSchedule = (arr) => arr.sort((a, b) => (days.indexOf(a.dayOfWeek) - days.indexOf(b.dayOfWeek) !== 0) ? (days.indexOf(a.dayOfWeek) - days.indexOf(b.dayOfWeek)) : (parseInt(a.end) - parseInt(a.start)) - (parseInt(b.end) - parseInt(b.start)));
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
