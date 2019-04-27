@@ -197,7 +197,13 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  // Solution code here...
+  for( var index = 0; index < str.length; index++){
+    if (/[AaEeIiOoUu]/.test(str[index])) {
+      str = str.slice(0, index) + str.slice(index+1);
+      index--;
+    }
+  }
+  return str;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -211,7 +217,18 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 const extractVowels = (str) => {
-  // Solution code here...
+  //if i can't use regex and can only use split / slice / splice / join....there are other ways lol.
+  let vowels = '';
+  for( var index = 0; index < str.length; index++){
+    if (/[AaEeIiOoUu]/.test(str[index])) {
+      vowels += str[index];
+      str = str.slice(0, index) + str.slice(index+1);
+      index--;
+    }
+  }
+  //because I need this in sorted order.. **eye roll**
+  vowels = vowels.split('').sort().join('');
+  return [str, vowels];
 };
 
 /* ------------------------------------------------------------------------------------------------
