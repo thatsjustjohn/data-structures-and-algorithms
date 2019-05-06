@@ -12,7 +12,11 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  return input.reduce((acccumulatorMain, currentValueMain) => {
+    return currentValueMain.reduce( (acccumulator, currentValue) => {
+      return currentValue === target ? acccumulator + 1 : acccumulator;
+    }, acccumulatorMain);
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +30,11 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  return input.reduce((acccumulatorMain, currentValueMain) => {
+    return currentValueMain.reduce( (acccumulator, currentValue) => {
+      return acccumulator + currentValue;
+    }, acccumulatorMain);
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,7 +50,18 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.reduce((acccumulatorMain, currentValueMain) => {
+    let tempaccum = currentValueMain.reduce((acccumulator, currentValue) =>{
+      if(typeof(currentValue) !== 'number' || currentValue % 5 !== 0){
+        return acccumulator;
+      }else{
+        acccumulator.push(Math.pow(2,currentValue));
+        return acccumulator;
+      }
+    }, []);
+    acccumulatorMain.push(tempaccum);
+    return acccumulatorMain;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,7 +127,9 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.reduce( (acccumulator, currentValue) => {
+    return currentValue.gender === 'female' || currentValue.gender === 'male' ? acccumulator === '' ? acccumulator + currentValue.name : acccumulator + ' and ' + currentValue.name : acccumulator;
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +139,9 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce( (acccumulator, currentValue) => {
+    return acccumulator === '' ? currentValue.name : acccumulator.length < currentValue.name.length ? acccumulator : currentValue.name;
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
