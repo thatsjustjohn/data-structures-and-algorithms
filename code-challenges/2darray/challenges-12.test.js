@@ -146,6 +146,9 @@ let lowestWeeklyTemperatureData = [
 const reducer = (accumulator, currentValue) => {
   return accumulator += currentValue;
 };
+// Michelless
+// const lowestWeeklyAverage = weather => weather.map(week => week.reduce( (prevAns, nextVal) => prevAns + nextVal) / week.length).reduce( (prevAns, nextVal) => Math.min(prevAns, nextVal) );
+
 const lowestWeeklyAverage = (weather) => {
   return weather.reduce((accumulator,currentValue) => {
     if(Array.isArray(accumulator)){
@@ -168,7 +171,7 @@ The function should parse the string as rows and columns and compute the sum of 
 For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
-const excel = (str) => str.split('\n').map(element => element.split(',').map(element => parseInt(element)).reduce(reducer));
+const excel = (str) => str.split('\n').map(element => element.split(',').reduce((accumulator, currentValue) => parseInt(accumulator) + parseInt(currentValue)));
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
