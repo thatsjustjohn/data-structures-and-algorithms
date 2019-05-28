@@ -11,7 +11,7 @@ public class ArrayReverse {
         // print out the result, nicely
         System.out.println(Arrays.toString(endArr));
         // Uncomment to Execute the line below to run tests
-        //test();
+        test();
     }
 
     // the method you should write, to reverse an array
