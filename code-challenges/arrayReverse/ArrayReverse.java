@@ -10,7 +10,8 @@ public class ArrayReverse {
         int[] endArr = reverseArray(startArr);
         // print out the result, nicely
         System.out.println(Arrays.toString(endArr));
-        test();
+        // Uncomment to Execute the line below to run tests
+        //test();
     }
 
     // the method you should write, to reverse an array
