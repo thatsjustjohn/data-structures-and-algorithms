@@ -2,6 +2,7 @@ package code.challenges401.linkedlist;
 
 public class LinkedList {
 
+    // Variables
     Node head;
 
     // Create nodes for linked list
@@ -9,12 +10,14 @@ public class LinkedList {
         int data;
         Node next;
 
+        // Constructor takes in an int.
         Node(int data){
             this.data = data;
             this.next = null;
         }
     }
 
+    // Linked list constructor sets head to null on creation
     LinkedList(){
         this.head = null;
     }
@@ -38,6 +41,7 @@ public class LinkedList {
 
     // This function prints the linked list.
     public String print(){
+        // Declare variables
         Node iterator = head;
         StringBuilder nodeString = new StringBuilder();
         nodeString.append("LinkedList: ");
