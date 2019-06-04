@@ -72,39 +72,41 @@ public class LinkedList {
     }
 
     // This function inserts before the target node
-    public boolean insertBefore(int target, int value){
+    public void insertBefore(int target, int value){
         Node iterator = head;
         // Empty List
-        if(head == null) return false;
+        if(head == null) return;
         if(head.data == target){
             insert(value);
-            return true;
+            return;
         }
         while(iterator.next != null){
             if(iterator.next.data == target){
                 Node newNode = new Node(value);
                 newNode.next = iterator.next;
                 iterator.next = newNode;
-                return true;
+                return;
             }
             iterator = iterator.next;
         }
-        return false;
+        throw new IllegalArgumentException();
     }
+
     // This function inserts after the target value
-    public boolean insertAfter(int target, int value){
+    public void insertAfter(int target, int value){
         Node iterator = head;
+        if(head == null) return;
         while(iterator != null){
             if(iterator.data == target){
                 Node newNode = new Node(value);
                 newNode.next = iterator.next;
                 iterator.next = newNode;
-                return true;
+                return;
             }
             iterator = iterator.next;
         }
         // If target wasn't found
-        return false;
+        throw new IllegalArgumentException();
     }
 
 }

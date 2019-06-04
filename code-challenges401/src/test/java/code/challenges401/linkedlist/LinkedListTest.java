@@ -99,9 +99,8 @@ public class LinkedListTest {
     @Test
     public void insertBefore_empty() {
         LinkedList classUnderTest = new LinkedList();
-        assertEquals("Should return false",
-                false,
-                classUnderTest.insertBefore(1, 2));
+        assertTrue("Head should be null",
+                classUnderTest.head == null);
     }
     @Test
     public void insertBefore_first() {
@@ -109,9 +108,7 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-        assertEquals("Should insert at the beginning",
-                true,
-                classUnderTest.insertBefore(1, 5));
+
         assertEquals("should be 5",
                 5,
                 classUnderTest.head.data);
@@ -123,9 +120,7 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-        assertEquals("Should insert before 3 in the mid",
-                true,
-                classUnderTest.insertBefore(3, 5));
+
         assertEquals("should be 5",
                 5,
                 classUnderTest.head.next.data);
@@ -137,36 +132,27 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(2);
         classUnderTest.insert(1);
-        assertEquals("Should insert before last node",
-                true,
-                classUnderTest.insertBefore(2, 5));
 
         assertEquals("should be 5",
                 5,
                 classUnderTest.head.next.data);
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void insertBefore_dne() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-
-        assertEquals("Should insert before last node",
-                true,
-                classUnderTest.insertBefore(2, 5));
-        assertEquals("should be 5",
-                5,
-                classUnderTest.head.next.next.data);
+        classUnderTest.insertBefore(4,5);
     }
+
 
     @Test
     public void insertAfter_empty() {
         LinkedList classUnderTest = new LinkedList();
-        assertEquals("Should return false",
-                false,
-                classUnderTest.insertAfter(1, 2));
+        assertTrue("Head should be null",
+                classUnderTest.head == null);
     }
 
     @Test
@@ -175,9 +161,7 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-        assertEquals("Should insert after 1 in the mid",
-                true,
-                classUnderTest.insertAfter(1, 5));
+
         assertEquals("should be 5",
                 5,
                 classUnderTest.head.next.data);
@@ -190,9 +174,7 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-        assertEquals("Should insert after 3 in the mid",
-                true,
-                classUnderTest.insertAfter(3, 5));
+
         assertEquals("should be 5",
                 5,
                 classUnderTest.head.next.next.data);
@@ -206,9 +188,6 @@ public class LinkedListTest {
         classUnderTest.insert(3);
         classUnderTest.insert(1);
 
-        assertEquals("Should insert after last node",
-                true,
-                classUnderTest.insertAfter(2, 5));
         assertEquals("should be 5",
                 5,
                 classUnderTest.head.next.next.next.data);
@@ -222,18 +201,19 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(1);
 
-        assertEquals("Should insert after first 2",
-                true,
-                classUnderTest.insertAfter(2, 5));
         assertEquals("should be 5",
                 5,
                 classUnderTest.head.next.next.data);
         System.out.println(classUnderTest.print());
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void insertAfter_dne() {
-
+        LinkedList classUnderTest = new LinkedList();
+        classUnderTest.insert(2);
+        classUnderTest.insert(3);
+        classUnderTest.insert(1);
+        classUnderTest.insertAfter(4,5);
     }
 
 }
