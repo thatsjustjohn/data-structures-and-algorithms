@@ -25,7 +25,7 @@ public class LinkedListTest {
         classUnderTest.insert(5);
         classUnderTest.insert(10);
         classUnderTest.insert(15);
-        assertTrue("Head points to 15", classUnderTest.head.data == 15);
+        assertTrue("Head points to 15", classUnderTest.head.value == 15);
     }
 
     @Test
@@ -83,7 +83,7 @@ public class LinkedListTest {
         classUnderTest.append(5);
         assertEquals("Last item is 5",
                 5,
-                classUnderTest.head.next.next.next.data);
+                classUnderTest.head.next.next.next.value);
     }
 
 
@@ -93,7 +93,7 @@ public class LinkedListTest {
         classUnderTest.append(1);
         assertEquals("Last item is 5",
                 1,
-                classUnderTest.head.data);
+                classUnderTest.head.value);
     }
 
     @Test
@@ -108,10 +108,10 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-
+        classUnderTest.insertBefore(1,5);
         assertEquals("should be 5",
                 5,
-                classUnderTest.head.data);
+                classUnderTest.head.value);
     }
 
     @Test
@@ -120,10 +120,10 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-
+        classUnderTest.insertBefore(3,5);
         assertEquals("should be 5",
                 5,
-                classUnderTest.head.next.data);
+                classUnderTest.head.next.value);
     }
 
     @Test
@@ -132,10 +132,10 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(2);
         classUnderTest.insert(1);
-
+        classUnderTest.insertBefore(2,5);
         assertEquals("should be 5",
                 5,
-                classUnderTest.head.next.data);
+                classUnderTest.head.next.value);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -161,10 +161,10 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-
+        classUnderTest.insertAfter(1, 5);
         assertEquals("should be 5",
                 5,
-                classUnderTest.head.next.data);
+                classUnderTest.head.next.value);
 
     }
 
@@ -174,10 +174,10 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-
+        classUnderTest.insertAfter(3,5);
         assertEquals("should be 5",
                 5,
-                classUnderTest.head.next.next.data);
+                classUnderTest.head.next.next.value);
 
     }
 
@@ -187,11 +187,10 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(3);
         classUnderTest.insert(1);
-
+        classUnderTest.insertAfter(2, 5);
         assertEquals("should be 5",
                 5,
-                classUnderTest.head.next.next.next.data);
-        System.out.println(classUnderTest.print());
+                classUnderTest.head.next.next.next.value);
     }
 
     @Test
@@ -200,11 +199,10 @@ public class LinkedListTest {
         classUnderTest.insert(2);
         classUnderTest.insert(2);
         classUnderTest.insert(1);
-
+        classUnderTest.insertAfter(2,5);
         assertEquals("should be 5",
                 5,
-                classUnderTest.head.next.next.data);
-        System.out.println(classUnderTest.print());
+                classUnderTest.head.next.next.value);
     }
 
     @Test(expected = IllegalArgumentException.class)
