@@ -7,13 +7,17 @@ public class LinkedList {
 
     // Create nodes for linked list
     static class Node {
-        int data;
+        int value;
         Node next;
 
         // Constructor takes in an int.
-        Node(int data){
-            this.data = data;
+        Node(int value){
+            this.value = value;
             this.next = null;
+        }
+
+        public String toString(){
+            return String.format("[%d]", this.value);
         }
     }
 
@@ -23,17 +27,17 @@ public class LinkedList {
     }
 
     // This function inserts an item into the linked list
-    public void insert(int data){
-        Node newNode = new Node(data);
+    public void insert(int value){
+        Node newNode = new Node(value);
         newNode.next = head;
         head = newNode;
     }
 
     // This function returns a boolean if the item exists in the linked list
-    public boolean includes(int data){
+    public boolean includes(int value){
         Node iterator = head;
         while(iterator != null){
-            if(iterator.data == data) return true;
+            if(iterator.value == value) return true;
             iterator = iterator.next;
         }
         return false;
@@ -46,9 +50,7 @@ public class LinkedList {
         StringBuilder nodeString = new StringBuilder();
         nodeString.append("LinkedList: head -> ");
         while(iterator != null){
-            nodeString.append("[");
-            nodeString.append(iterator.data);
-            nodeString.append("]");
+            nodeString.append(iterator.toString());
             nodeString.append(" -> ");
             iterator = iterator.next;
         }
@@ -76,12 +78,12 @@ public class LinkedList {
         Node iterator = head;
         // Empty List
         if(head == null) return;
-        if(head.data == target){
+        if(head.value == target){
             insert(value);
             return;
         }
         while(iterator.next != null){
-            if(iterator.next.data == target){
+            if(iterator.next.value == target){
                 Node newNode = new Node(value);
                 newNode.next = iterator.next;
                 iterator.next = newNode;
@@ -97,7 +99,7 @@ public class LinkedList {
         Node iterator = head;
         if(head == null) return;
         while(iterator != null){
-            if(iterator.data == target){
+            if(iterator.value == target){
                 Node newNode = new Node(value);
                 newNode.next = iterator.next;
                 iterator.next = newNode;
