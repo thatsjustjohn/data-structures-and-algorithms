@@ -111,4 +111,24 @@ public class LinkedList {
         throw new IllegalArgumentException();
     }
 
+    // This function will return the value kth from the end
+    public int kthFromEnd(int k){
+        // Validate inputs
+        // Check if head is null also helps for .next traversal
+        if(head == null) throw new IllegalStateException();
+        if(k < 0) throw new IllegalArgumentException();
+        // Setup variables
+        Node frontIterator = head;
+        Node backIterator = head;
+        int count = 0;
+        while(frontIterator.next != null){
+            if(count >= k) backIterator = backIterator.next;
+            frontIterator = frontIterator.next;
+            count++;
+        }
+        // If we loop and there are less elements than the target
+        if(count < k) throw new IllegalArgumentException();
+        return backIterator.value;
+    }
+
 }

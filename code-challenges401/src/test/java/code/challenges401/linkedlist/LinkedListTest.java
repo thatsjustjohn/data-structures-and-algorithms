@@ -74,7 +74,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void append_multiple() {
+    public void test_append_multiple() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(3);
@@ -88,7 +88,7 @@ public class LinkedListTest {
 
 
     @Test
-    public void append_empty() {
+    public void test_append_empty() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.append(1);
         assertEquals("Last item is 5",
@@ -97,13 +97,13 @@ public class LinkedListTest {
     }
 
     @Test
-    public void insertBefore_empty() {
+    public void test_insertBefore_empty() {
         LinkedList classUnderTest = new LinkedList();
         assertTrue("Head should be null",
                 classUnderTest.head == null);
     }
     @Test
-    public void insertBefore_first() {
+    public void test_insertBefore_first() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(3);
@@ -115,7 +115,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void insertBefore_mid() {
+    public void test_insertBefore_mid() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(3);
@@ -127,7 +127,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void insertBefore_end() {
+    public void test_insertBefore_end() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(2);
@@ -139,7 +139,7 @@ public class LinkedListTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void insertBefore_dne() {
+    public void test_insertBefore_dne() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(3);
@@ -149,14 +149,14 @@ public class LinkedListTest {
 
 
     @Test
-    public void insertAfter_empty() {
+    public void test_insertAfter_empty() {
         LinkedList classUnderTest = new LinkedList();
         assertTrue("Head should be null",
                 classUnderTest.head == null);
     }
 
     @Test
-    public void insertAfter_beginning() {
+    public void test_insertAfter_beginning() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(3);
@@ -169,7 +169,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void insertAfter_mid() {
+    public void test_insertAfter_mid() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(3);
@@ -182,7 +182,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void insertAfter_end() {
+    public void test_insertAfter_end() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(3);
@@ -194,7 +194,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void insertAfter_duplicate() {
+    public void test_insertAfter_duplicate() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(2);
@@ -206,7 +206,7 @@ public class LinkedListTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void insertAfter_dne() {
+    public void test_insertAfter_dne() {
         LinkedList classUnderTest = new LinkedList();
         classUnderTest.insert(2);
         classUnderTest.insert(3);
@@ -214,4 +214,62 @@ public class LinkedListTest {
         classUnderTest.insertAfter(4,5);
     }
 
+    // Testing for code kth element challenge
+    public LinkedList setupKthFromEnd(){
+        LinkedList classUnderTest = new LinkedList();
+        classUnderTest.insert(2);
+        classUnderTest.insert(8);
+        classUnderTest.insert(3);
+        classUnderTest.insert(1);
+        return classUnderTest;
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_kthFromEnd_kGreaterThanList(){
+        LinkedList classUnderTest = setupKthFromEnd();
+        classUnderTest.kthFromEnd(6);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_kthFromEnd_kSameSizeAsList(){
+        LinkedList classUnderTest = setupKthFromEnd();
+        classUnderTest.kthFromEnd(4);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_kthFromEnd_kNegative(){
+        LinkedList classUnderTest = setupKthFromEnd();
+        classUnderTest.kthFromEnd(-44);
+    }
+
+    @Test
+    public void test_kthFromEnd_kEnd(){
+        LinkedList classUnderTest = setupKthFromEnd();
+        assertEquals(2,classUnderTest.kthFromEnd(0));
+    }
+
+    @Test
+    public void test_kthFromEnd_kMiddle(){
+        LinkedList classUnderTest = setupKthFromEnd();
+        assertEquals(3,classUnderTest.kthFromEnd(2));
+    }
+
+    @Test
+    public void test_kthFromEnd_kFront(){
+        LinkedList classUnderTest = setupKthFromEnd();
+        assertEquals(1,classUnderTest.kthFromEnd(3));
+    }
+
+    @Test
+    public void test_kthFromEnd_oneNode_kFront(){
+        LinkedList classUnderTest = new LinkedList();
+        classUnderTest.insert(2);
+        assertEquals(2,classUnderTest.kthFromEnd(0));
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void test_kthFromEnd_empty(){
+        LinkedList classUnderTest = new LinkedList();
+        assertEquals(1,classUnderTest.kthFromEnd(3));
+    }
 }
