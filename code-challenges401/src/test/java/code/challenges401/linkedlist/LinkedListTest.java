@@ -272,4 +272,88 @@ public class LinkedListTest {
         LinkedList classUnderTest = new LinkedList();
         assertEquals(1,classUnderTest.kthFromEnd(3));
     }
+
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_mergeLists_bothNull() {
+        LinkedList.mergeLists(new LinkedList(), new LinkedList());
+    }
+
+    @Test
+    public void test_mergeLists_oneNull(){
+        // Setup
+        LinkedList one = new LinkedList();
+        one.insert(5);
+        LinkedList two = new LinkedList();
+        // First way
+        LinkedList result = LinkedList.mergeLists(one, two);
+        assertEquals(5,
+                result.head.value);
+        // Flip them
+        result = LinkedList.mergeLists(two, one);
+        System.out.println(result.print());
+        assertEquals(5,
+                result.head.value);
+    }
+
+    @Test
+    public void test_mergeLists_sameSize(){
+        // Setup
+        LinkedList one = new LinkedList();
+        one.insert(2);
+        one.insert(3);
+        one.insert(1);
+        LinkedList two = new LinkedList();
+        two.insert(4);
+        two.insert(9);
+        two.insert(5);
+
+        LinkedList result = LinkedList.mergeLists(one, two);
+        assertEquals("LinkedList: head -> [1] -> [5] -> [3] -> [9] -> [2] -> [4] -> null",
+                result.print());
+
+        assertEquals(3,
+                one.head.next.next.value);
+
+    }
+
+    @Test
+    public void test_mergeLists_firstSmol(){
+        // Setup
+        LinkedList one = new LinkedList();
+        one.insert(3);
+        one.insert(1);
+        LinkedList two = new LinkedList();
+        two.insert(4);
+        two.insert(9);
+        two.insert(5);
+
+        LinkedList result = LinkedList.mergeLists(one, two);
+        assertEquals("LinkedList: head -> [1] -> [5] -> [3] -> [9] -> [4] -> null",
+                result.print());
+
+        assertEquals(9,
+                one.head.next.next.next.value);
+
+    }
+
+    @Test
+    public void test_mergeLists_secondSmol(){
+        // Setup
+        LinkedList one = new LinkedList();
+        one.insert(2);
+        one.insert(3);
+        one.insert(1);
+        LinkedList two = new LinkedList();
+        two.insert(9);
+        two.insert(5);
+
+        LinkedList result = LinkedList.mergeLists(one, two);
+        assertEquals("LinkedList: head -> [1] -> [5] -> [3] -> [9] -> [2] -> null",
+                result.print());
+
+        assertEquals(2,
+                one.head.next.next.next.next.value);
+
+    }
 }

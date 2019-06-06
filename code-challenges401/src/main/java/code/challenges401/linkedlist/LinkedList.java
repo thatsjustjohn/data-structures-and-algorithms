@@ -131,4 +131,24 @@ public class LinkedList {
         return backIterator.value;
     }
 
+    public static LinkedList mergeLists(LinkedList one, LinkedList two){
+        if(one.head == null && two.head == null) throw new IllegalArgumentException();
+        if(one.head == null || two.head == null) return one.head == null ? two : one;
+        Node cur1 = one.head, cur2 = two.head, next1, next2;
+        while(cur1 != null && cur2 != null){
+            next1 = cur1.next;
+            cur1.next = cur2;
+            // If only a downshift
+            if(next1 == null){
+                return one;
+            }
+            // Perform upshift
+            next2 = cur2.next;
+            cur2.next = next1;
+            //Move up pointers
+            cur1 = next1;
+            cur2 = next2;
+        }
+        return one;
+    }
 }
