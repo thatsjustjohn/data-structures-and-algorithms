@@ -28,7 +28,7 @@ insertAfter requires traversal of the list to find the target item making it O(n
 kthFromEnd: time: O(n) space: O(1)
 kthFromEnd requires traversal of the list to find the Kth element making it O(n) time performance
 MergeLists: time: O(n) space: O(1)
-MergeLists requires traversal of the list together making it O(n) performance.  This is done is O(1) as no new node items or LinkedLists are created.
+MergeLists requires traversal of the list together making it O(n) performance.  This is done is O(1) as no new node items or LinkedLists are created.  
 isPalindrome: time: O(n)
 
 ## API
@@ -38,6 +38,6 @@ isPalindrome: time: O(n)
 ```void append(int value)``` Takes in an integer value as a parameter.   
 ```boolean insertBefore(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
 ```boolean insertAfter(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
-```int kthFromEnd(int k)``` Takes in an integer for home many positions from the end's element you want.  Returns an integer that elements value.
-```LinkedList mergeLists(LinkedList one, LinkedList two)``` Takes in two linked lists and returns a linked list of those 2 lists merged.
+```int kthFromEnd(int k)``` Takes in an integer for home many positions from the end's element you want.  Returns an integer that elements value.  
+```LinkedList mergeLists(LinkedList one, LinkedList two)``` Takes in two linked lists and returns a linked list of those 2 lists merged.  
 ```boolean Palindrome(LinkedList ll)``` Takes in a linked list and returns a boolean is the list is a palindrome
