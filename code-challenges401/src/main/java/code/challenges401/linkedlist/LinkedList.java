@@ -1,5 +1,7 @@
 package code.challenges401.linkedlist;
 
+import jdk.internal.util.xml.impl.Pair;
+
 public class LinkedList {
 
     // Variables
@@ -18,6 +20,16 @@ public class LinkedList {
 
         public String toString(){
             return String.format("[%d]", this.value);
+        }
+    }
+
+    static class Pair {
+        boolean isPal;
+        Node node;
+
+        Pair(Node n){
+            this.isPal = true;
+            this.node = n;
         }
     }
 
@@ -150,5 +162,25 @@ public class LinkedList {
             cur2 = next2;
         }
         return one;
+    }
+
+    public static boolean isPalindrome(LinkedList ll){
+        if(ll.head == null) return false;
+        if(ll.head.next == null) return true;
+
+        Pair result = PHelper(ll.head, ll.head);
+        return result.isPal;
+    }
+
+    private static Pair PHelper(Node n, Node head){
+        if(n == null){
+            return new Pair(head);
+        }
+        Pair answer = PHelper(n.next, head);
+        if(answer.node.value != n.value){
+            answer.isPal = false;
+        }
+        answer.node = answer.node.next;
+        return answer;
     }
 }
