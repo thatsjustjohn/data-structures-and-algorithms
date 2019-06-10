@@ -1,7 +1,5 @@
 package code.challenges401.linkedlist;
 
-import jdk.internal.util.xml.impl.Pair;
-
 public class LinkedList {
 
     // Variables
