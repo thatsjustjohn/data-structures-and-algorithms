@@ -2,6 +2,8 @@ package code.challenges401.stacksandqueues;
 
 import org.junit.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.Assert.*;
 
 public class QueueTest {
@@ -57,7 +59,7 @@ public class QueueTest {
                 queue.front);
     }
 
-    @Test (expected = IllegalStateException.class)
+    @Test (expected = NoSuchElementException.class)
     public void test_dequeue_empty(){
         Queue queue = new Queue();
         queue.dequeue();
@@ -75,7 +77,7 @@ public class QueueTest {
     }
 
 
-    @Test (expected = IllegalStateException.class)
+    @Test (expected = NoSuchElementException.class)
     public void test_peek_empty(){
         Queue queue = new Queue();
         queue.peek();

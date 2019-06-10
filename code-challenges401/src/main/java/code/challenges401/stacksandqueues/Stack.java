@@ -1,6 +1,9 @@
 package code.challenges401.stacksandqueues;
 
 import org.apache.commons.math3.exception.NullArgumentException;
+import sun.invoke.empty.Empty;
+
+import java.util.EmptyStackException;
 
 public class Stack {
     Node top;
@@ -18,7 +21,7 @@ public class Stack {
 
     // This function removes(pops) an item from the stack.
     public int pop(){
-        if(top == null) throw new IllegalStateException();
+        if(top == null) throw new EmptyStackException();
         Node temp = top;
         top = temp.next;
         return temp.value;
@@ -26,7 +29,7 @@ public class Stack {
 
     // This function returns the value that's at the top of the stack.
     public int peek(){
-        if(top == null) throw new IllegalStateException();
+        if(top == null) throw new EmptyStackException();
         return top.value;
     }
 

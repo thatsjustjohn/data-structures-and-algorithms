@@ -2,6 +2,8 @@ package code.challenges401.stacksandqueues;
 
 import org.junit.Test;
 
+import java.util.EmptyStackException;
+
 import static org.junit.Assert.*;
 
 public class StackTest {
@@ -41,7 +43,7 @@ public class StackTest {
                 stack.top.value);
     }
 
-    @Test (expected = IllegalStateException.class)
+    @Test (expected = EmptyStackException.class)
     public void test_pop_empty(){
         Stack stack = new Stack();
         stack.pop();
@@ -58,7 +60,7 @@ public class StackTest {
                 stack.top);
     }
 
-    @Test (expected = IllegalStateException.class)
+    @Test (expected = EmptyStackException.class)
     public void test_peek_empty(){
         Stack stack = new Stack();
         stack.peek();
