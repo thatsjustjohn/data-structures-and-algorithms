@@ -6,4 +6,4 @@
 4. [[Kth From End]](../code-challenges401/readmes/linked_list.md)[[White Board]](../code-challenges401/assets/ll_kth_from_end.jpg)[[Code]](../code-challenges401/src/main/java/code/challenges401/linkedlist/LinkedList.java)
 5. [[Merge Linked Lists]](../code-challenges401/readmes/linked_list.md)[[White Board]](../code-challenges401/assets/ll_merge.jpg)[[Code]](../code-challenges401/src/main/java/code/challenges401/linkedlist/LinkedList.java)
 6. [[Palindrome]](../code-challenges401/readmes/linked_list.md)[[Code]](../code-challenges401/src/main/java/code/challenges401/linkedlist/LinkedList.java)
-7. [[Stacks and Queues]](../code-challenges401/readmes/stack_and_queues.md)[[Code Stack]](../code-challenges401/src/main/java/code/challenges401/stacksandqueues/Stack.java)[[Code Stack]](../code-challenges401/src/main/java/code/challenges401/stacksandqueues/Queue.java)
+7. [[Stacks and Queues]](../code-challenges401/readmes/stack_and_queues.md)[[Code Stack]](../code-challenges401/src/main/java/code/challenges401/stacksandqueues/Stack.java)[[Code Queue]](../code-challenges401/src/main/java/code/challenges401/stacksandqueues/Queue.java)
