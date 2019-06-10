@@ -9,8 +9,7 @@ public class QueueTest {
     @Test
     public void test_emptyQueue() {
         Queue queue = new Queue();
-        assertEquals(null,
-                queue.front);
+        assertTrue(queue.isEmpty());
     }
 
     @Test
@@ -58,7 +57,7 @@ public class QueueTest {
                 queue.front);
     }
 
-    @Test (expected = NullPointerException.class)
+    @Test (expected = IllegalStateException.class)
     public void test_dequeue_empty(){
         Queue queue = new Queue();
         queue.dequeue();
@@ -76,7 +75,7 @@ public class QueueTest {
     }
 
 
-    @Test (expected = NullPointerException.class)
+    @Test (expected = IllegalStateException.class)
     public void test_peek_empty(){
         Queue queue = new Queue();
         queue.peek();

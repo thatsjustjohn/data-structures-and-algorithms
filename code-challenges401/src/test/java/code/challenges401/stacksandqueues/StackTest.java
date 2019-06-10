@@ -9,8 +9,7 @@ public class StackTest {
     @Test
     public void test_emptyStack() {
         Stack stack = new Stack();
-        assertEquals(null,
-                stack.top);
+        assertTrue(stack.isEmpty());
     }
 
     @Test
@@ -42,7 +41,7 @@ public class StackTest {
                 stack.top.value);
     }
 
-    @Test (expected = NullPointerException.class)
+    @Test (expected = IllegalStateException.class)
     public void test_pop_empty(){
         Stack stack = new Stack();
         stack.pop();
@@ -59,7 +58,7 @@ public class StackTest {
                 stack.top);
     }
 
-    @Test (expected = NullPointerException.class)
+    @Test (expected = IllegalStateException.class)
     public void test_peek_empty(){
         Stack stack = new Stack();
         stack.peek();

@@ -9,7 +9,7 @@ public class Queue {
         this.back = null;
     }
 
-    // This function adds an item to the end of the queue
+    // This function adds an item to the end of the queue.
     public void enqueue(int value){
         Node newNode = new Node(value);
         if(back == null && front == null){
@@ -21,21 +21,28 @@ public class Queue {
         back = newNode;
     }
 
-    // This function removes an item from the beginning of the queue
+    // This function removes an item from the beginning of the queue.
     public int dequeue(){
-        if(back == null) throw new NullPointerException();
+        if(front == null) throw new IllegalStateException();
         // This function removes(pops) an item from the stack
         Node temp = front;
         front = temp.next;
         return temp.value;
     }
 
-    // This function returns the value thats at the top of the stack
+    // This function returns the value thats at the top of the stack.
     public int peek(){
-        if(front == null) throw new NullPointerException();
+        if(front == null) throw new IllegalStateException();
         return front.value;
     }
 
+    // This function returns true is the queue is empty, otherwise false.
+    public boolean isEmpty(){
+        if(front == null){
+            return true;
+        }
+        return false;
+    }
 
     // This function returns the string of the queue
     public String toString(){
