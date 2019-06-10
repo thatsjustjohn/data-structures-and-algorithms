@@ -12,37 +12,37 @@ Create a singly linked list and write functions to insert a node(insert), a func
 
 ## Approach & Efficiency
 
-Efficiency  
-insert: time: O(1) space: O(1)  
-inserting at the head provides O(1) time performance,   
-includes: time: O(n) space: O(1)   
-includes has to check the whole list which results in O(n) time performance.  
-print: time: O(n) space: O(1)  
-print has to get data from each item in the list which results in O(n) time performance.  
-append: time: O(n) space: O(1) 
-appending without a tail pointed requires O(n) time performance
-insertBefore: time: O(n) space: O(1) 
-insertBefore requires traversal of the list to find the target item making it O(n) time performance. 
-insertAfter: time: O(n) space: O(1) 
-insertAfter requires traversal of the list to find the target item making it O(n) time performance. 
-kthFromEnd: time: O(n) space: O(1)
-kthFromEnd requires traversal of the list to find the Kth element making it O(n) time performance
-MergeLists: time: O(n) space: O(1)
-MergeLists requires traversal of the list together making it O(n) performance.  This is done is O(1) as no new node items or LinkedLists are created.  
-isPalindrome: time: O(n)
-isPalindrome stack time: O(n) space O(n)
-isPalindrome(both) requires traversal of the list, making them both O(n) performance.  isPalindrome stack uses a stack datas tructure to hold the nodes making its space O(n)
+Efficiency\
+insert: time: O(1) space: O(1)\
+inserting at the head provides O(1) time performance.\ 
+includes: time: O(n) space: O(1)\
+includes has to check the whole list which results in O(n) time performance.\
+print: time: O(n) space: O(1)\
+print has to get data from each item in the list which results in O(n) time performance.\
+append: time: O(n) space: O(1)\
+appending without a tail pointed requires O(n) time performance.\
+insertBefore: time: O(n) space: O(1)\
+insertBefore requires traversal of the list to find the target item making it O(n) time performance.\ 
+insertAfter: time: O(n) space: O(1)\
+insertAfter requires traversal of the list to find the target item making it O(n) time performance.\
+kthFromEnd: time: O(n) space: O(1)\
+kthFromEnd requires traversal of the list to find the Kth element making it O(n) time performance.\
+MergeLists: time: O(n) space: O(1)\
+MergeLists requires traversal of the list together making it O(n) performance.  This is done is O(1) as no new node items or LinkedLists are created.\
+isPalindrome: time: O(n)\
+isPalindrome stack time: O(n) space O(n)\
+isPalindrome(both) requires traversal of the list, making them both O(n) performance.  isPalindrome stack uses a stack datas tructure to hold the nodes making its space O(n).
 
 
 ## API
-```void insert(int value)``` Takes in a integer value as a parameter.   
-```boolean includes(int value)``` Takes in an integer value as a parameter and returns a boolean(true or false).  
-```String print()``` Takes in no parameters and returns a String which lists all the nodes.
-```void append(int value)``` Takes in an integer value as a parameter.   
-```boolean insertBefore(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
-```boolean insertAfter(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
-```int kthFromEnd(int k)``` Takes in an integer for home many positions from the end's element you want.  Returns an integer that elements value.
-```LinkedList mergeLists(LinkedList one, LinkedList two)``` Takes in two linked lists and returns a linked list of those 2 lists merged.
-```boolean isPalindrome(LinkedList ll)``` Takes in a linked list and returns a boolean if the list is a palindrome.
+```void insert(int value)``` Takes in a integer value as a parameter.\
+```boolean includes(int value)``` Takes in an integer value as a parameter and returns a boolean(true or false).\
+```String print()``` Takes in no parameters and returns a String which lists all the nodes.\
+```void append(int value)``` Takes in an integer value as a parameter.\
+```boolean insertBefore(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.\
+```boolean insertAfter(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.\
+```int kthFromEnd(int k)``` Takes in an integer for home many positions from the end's element you want.  Returns an integer that elements value.\
+```LinkedList mergeLists(LinkedList one, LinkedList two)``` Takes in two linked lists and returns a linked list of those 2 lists merged.\
+```boolean isPalindrome(LinkedList ll)``` Takes in a linked list and returns a boolean if the list is a palindrome.\
 ```boolean isPalindrome_stack(LinkedList ll)``` Takes in a linked list and returns a boolean if the list is a palindrome.
 
