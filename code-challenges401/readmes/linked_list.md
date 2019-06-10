@@ -30,6 +30,9 @@ kthFromEnd requires traversal of the list to find the Kth element making it O(n)
 MergeLists: time: O(n) space: O(1)
 MergeLists requires traversal of the list together making it O(n) performance.  This is done is O(1) as no new node items or LinkedLists are created.  
 isPalindrome: time: O(n)
+isPalindrome stack time: O(n) space O(n)
+isPalindrome(both) requires traversal of the list, making them both O(n) performance.  isPalindrome stack uses a stack datas tructure to hold the nodes making its space O(n)
+
 
 ## API
 ```void insert(int value)``` Takes in a integer value as a parameter.   
@@ -38,6 +41,8 @@ isPalindrome: time: O(n)
 ```void append(int value)``` Takes in an integer value as a parameter.   
 ```boolean insertBefore(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
 ```boolean insertAfter(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
-```int kthFromEnd(int k)``` Takes in an integer for home many positions from the end's element you want.  Returns an integer that elements value.  
-```LinkedList mergeLists(LinkedList one, LinkedList two)``` Takes in two linked lists and returns a linked list of those 2 lists merged.  
-```boolean Palindrome(LinkedList ll)``` Takes in a linked list and returns a boolean is the list is a palindrome
+```int kthFromEnd(int k)``` Takes in an integer for home many positions from the end's element you want.  Returns an integer that elements value.
+```LinkedList mergeLists(LinkedList one, LinkedList two)``` Takes in two linked lists and returns a linked list of those 2 lists merged.
+```boolean isPalindrome(LinkedList ll)``` Takes in a linked list and returns a boolean if the list is a palindrome.
+```boolean isPalindrome_stack(LinkedList ll)``` Takes in a linked list and returns a boolean if the list is a palindrome.
+

@@ -183,4 +183,26 @@ public class LinkedList {
         answer.node = answer.node.next;
         return answer;
     }
+
+
+    public static boolean isPalindrome_stack(LinkedList ll){
+        if(ll.head == null) return false;
+        LinkedList ll2 = new LinkedList();
+        Node iterator = ll.head;
+        int size = 0;
+        // Create stack
+        while(iterator != null){
+            ll2.insert(iterator.value);
+            iterator = iterator.next;
+            size++;
+        }
+        iterator = ll.head;
+        Node iterator2 = ll2.head;
+        for(int i = 0; i < size+1/2; i++){
+            if(iterator.value != iterator2.value){
+                return false;
+            }
+        }
+        return true;
+    }
 }

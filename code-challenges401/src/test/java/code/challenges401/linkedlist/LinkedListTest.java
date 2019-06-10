@@ -1,6 +1,7 @@
 package code.challenges401.linkedlist;
 
 import org.junit.Test;
+import sun.awt.image.ImageWatched;
 
 import static org.junit.Assert.*;
 
@@ -357,16 +358,21 @@ public class LinkedListTest {
 
     }
 
+    public LinkedList setupBigTest(int n){
+        LinkedList ll = new LinkedList();
+        for(int i = 0; i < n; i++){
+            ll.insert(i);
+        }
+        for(int i = n; i >= 0 ; i--){
+            ll.insert(i);
+        }
+        return ll;
+    }
+
+    // Test palindrome recursion
     @Test
     public void test_isPalindrome_true() {
-        LinkedList palindrome = new LinkedList();
-        palindrome.insert(4);
-        palindrome.insert(3);
-        palindrome.insert(2);
-        palindrome.insert(1);
-        palindrome.insert(2);
-        palindrome.insert(3);
-        palindrome.insert(4);
+        LinkedList palindrome = setupBigTest(5000);
         assertTrue(LinkedList.isPalindrome(palindrome));
     }
 
@@ -391,6 +397,38 @@ public class LinkedListTest {
 
     @Test
     public void test_isPalindrome_empty() {
+        LinkedList palindrome = new LinkedList();
+        assertFalse(LinkedList.isPalindrome(palindrome));
+    }
+
+    // Test palindrome stack
+    @Test
+    public void test_isPalindrome_stack_true() {
+        LinkedList palindrome = setupBigTest(5000);
+        assertTrue(LinkedList.isPalindrome(palindrome));
+    }
+
+    @Test
+    public void test_isPalindrome_stack_false() {
+        LinkedList palindrome = new LinkedList();
+        palindrome.insert(4);
+        palindrome.insert(3);
+        palindrome.insert(2);
+        palindrome.insert(1);
+        palindrome.insert(2);
+        palindrome.insert(3);
+        assertFalse(LinkedList.isPalindrome(palindrome));
+    }
+
+    @Test
+    public void test_isPalindrome_stack_one() {
+        LinkedList palindrome = new LinkedList();
+        palindrome.insert(4);
+        assertTrue(LinkedList.isPalindrome(palindrome));
+    }
+
+    @Test
+    public void test_isPalindrome_stack_empty() {
         LinkedList palindrome = new LinkedList();
         assertFalse(LinkedList.isPalindrome(palindrome));
     }
