@@ -45,3 +45,4 @@ isPalindrome(both) requires traversal of the list, making them both O(n) perform
 ```LinkedList mergeLists(LinkedList one, LinkedList two)``` Takes in two linked lists and returns a linked list of those 2 lists merged.
 ```boolean isPalindrome(LinkedList ll)``` Takes in a linked list and returns a boolean if the list is a palindrome.
 ```boolean isPalindrome_stack(LinkedList ll)``` Takes in a linked list and returns a boolean if the list is a palindrome.
+
