@@ -15,25 +15,25 @@ The queue is slightly different using a back pointer which allows enqueue, deque
 
 Efficiency  
 
-Stack:
-push: T: O(1)
-pop: T: O(1)
-peek: T: O(1)
-toString: T: O(n)
-Queue:
-enqueue: T: O(1)
-dequeue: T: O(1)
-peek: T: O(1)
+Stack:\
+push: T: O(1)\
+pop: T: O(1)\
+peek: T: O(1)\
+toString: T: O(n)\
+Queue:\
+enqueue: T: O(1)\
+dequeue: T: O(1)\
+peek: T: O(1)\
 toString: T: O(n)
 
 ## API
-Stack:
-```void push(int value)``` Takes in a integer value as a parameter and adds it to the stack.
-```int pop()``` This function pops off a value from the top of the stack and returns it.
-```int peek()``` This function peeks into the top of the stack and returns value that is currently there.
-```String toString()``` Takes in no parameters and returns a String which lists all the nodes in the stack.
-Queue:
-```void enqueue(int value)``` Takes in an integer value as a parameter and adds it to the back of the queue.
-```int dequeue()``` This function removes the front node in the queue and returns that value.
-```int peek()``` This function peeks into the front of the queue and returns the first next value.
+Stack:\
+```void push(int value)``` Takes in a integer value as a parameter and adds it to the stack.\
+```int pop()``` This function pops off a value from the top of the stack and returns it.\
+```int peek()``` This function peeks into the top of the stack and returns value that is currently there.\
+```String toString()``` Takes in no parameters and returns a String which lists all the nodes in the stack.\
+Queue:\
+```void enqueue(int value)``` Takes in an integer value as a parameter and adds it to the back of the queue.\
+```int dequeue()``` This function removes the front node in the queue and returns that value.\
+```int peek()``` This function peeks into the front of the queue and returns the first next value.\
 ```String toString()``` Takes in no parameters and returns a String which lists all of the nodes in the queue.
