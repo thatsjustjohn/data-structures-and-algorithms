@@ -5,30 +5,30 @@ import sun.invoke.empty.Empty;
 
 import java.util.EmptyStackException;
 
-public class Stack {
-    Node top;
+public class Stack<T> {
+    Node<T> top;
 
     Stack(){
         this.top = null;
     }
 
     // This function pushes an item into the stack.
-    public void push(int value){
-        Node newNode = new Node(value);
+    public void push(T value){
+        Node<T> newNode = new Node<>(value);
         newNode.next = top;
         this.top = newNode;
     }
 
     // This function removes(pops) an item from the stack.
-    public int pop(){
+    public T pop(){
         if(top == null) throw new EmptyStackException();
-        Node temp = top;
+        Node<T> temp = top;
         top = temp.next;
         return temp.value;
     }
 
     // This function returns the value that's at the top of the stack.
-    public int peek(){
+    public T peek(){
         if(top == null) throw new EmptyStackException();
         return top.value;
     }
@@ -41,7 +41,7 @@ public class Stack {
     // This function returns the string of the stack
     public String toString(){
         // Declare variables
-        Node iterator = top;
+        Node<T> iterator = top;
         StringBuilder nodeString = new StringBuilder();
         nodeString.append("Stack: Top -> ");
         while(iterator != null){
