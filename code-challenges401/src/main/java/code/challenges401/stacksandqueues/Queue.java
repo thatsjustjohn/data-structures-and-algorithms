@@ -1,5 +1,7 @@
 package code.challenges401.stacksandqueues;
 
+import java.util.NoSuchElementException;
+
 public class Queue {
     Node front;
     Node back;
@@ -23,7 +25,7 @@ public class Queue {
 
     // This function removes an item from the beginning of the queue.
     public int dequeue(){
-        if(front == null) throw new IllegalStateException();
+        if(front == null) throw new NoSuchElementException();
         // This function removes(pops) an item from the stack
         Node temp = front;
         front = temp.next;
@@ -32,7 +34,7 @@ public class Queue {
 
     // This function returns the value thats at the top of the stack.
     public int peek(){
-        if(front == null) throw new IllegalStateException();
+        if(front == null) throw new NoSuchElementException();
         return front.value;
     }
 
