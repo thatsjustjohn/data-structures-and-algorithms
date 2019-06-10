@@ -1,6 +1,6 @@
 # Singly Linked List
 
-This is an implementation of a singarly linked list which currently only contains methods to insert, includes, print, append, insertBefore, insertAfter, kthEndFrom, mergeLists.
+This is an implementation of a singularly linked list which currently only contains methods to insert, includes, print, append, insertBefore, insertAfter, kthEndFrom, mergeLists.
 
 ## Challenge
 
@@ -20,7 +20,7 @@ includes has to check the whole list which results in O(n) time performance.
 print: time: O(n) space: O(1)  
 print has to get data from each item in the list which results in O(n) time performance.  
 append: time: O(n) space: O(1) 
-appending without a tail pointed requires O(n) time perfomance  
+appending without a tail pointed requires O(n) time performance
 insertBefore: time: O(n) space: O(1) 
 insertBefore requires traversal of the list to find the target item making it O(n) time performance. 
 insertAfter: time: O(n) space: O(1) 
@@ -34,7 +34,7 @@ isPalindrome: time: O(n)
 ## API
 ```void insert(int value)``` Takes in a integer value as a parameter.   
 ```boolean includes(int value)``` Takes in an integer value as a parameter and returns a boolean(true or false).  
-```String print()``` Takes in no parmeters and returns a String which lists all the nodes.  
+```String print()``` Takes in no parameters and returns a String which lists all the nodes.
 ```void append(int value)``` Takes in an integer value as a parameter.   
 ```boolean insertBefore(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
 ```boolean insertAfter(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
