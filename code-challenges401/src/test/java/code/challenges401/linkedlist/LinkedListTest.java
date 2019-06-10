@@ -356,4 +356,42 @@ public class LinkedListTest {
                 one.head.next.next.next.next.value);
 
     }
+
+    @Test
+    public void test_isPalindrome_true() {
+        LinkedList palindrome = new LinkedList();
+        palindrome.insert(4);
+        palindrome.insert(3);
+        palindrome.insert(2);
+        palindrome.insert(1);
+        palindrome.insert(2);
+        palindrome.insert(3);
+        palindrome.insert(4);
+        assertTrue(LinkedList.isPalindrome(palindrome));
+    }
+
+    @Test
+    public void test_isPalindrome_false() {
+        LinkedList palindrome = new LinkedList();
+        palindrome.insert(4);
+        palindrome.insert(3);
+        palindrome.insert(2);
+        palindrome.insert(1);
+        palindrome.insert(2);
+        palindrome.insert(3);
+        assertFalse(LinkedList.isPalindrome(palindrome));
+    }
+
+    @Test
+    public void test_isPalindrome_one() {
+        LinkedList palindrome = new LinkedList();
+        palindrome.insert(4);
+        assertTrue(LinkedList.isPalindrome(palindrome));
+    }
+
+    @Test
+    public void test_isPalindrome_empty() {
+        LinkedList palindrome = new LinkedList();
+        assertFalse(LinkedList.isPalindrome(palindrome));
+    }
 }
