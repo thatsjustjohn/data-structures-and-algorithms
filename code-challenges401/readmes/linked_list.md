@@ -1,6 +1,6 @@
 # Singly Linked List
 
-This is an implementation of a singarly linked list which currently only contains methods to insert, includes, print, append, insertBefore, insertAfter, kthEndFrom, mergeLists.
+This is an implementation of a singularly linked list which currently only contains methods to insert, includes, print, append, insertBefore, insertAfter, kthEndFrom, mergeLists.
 
 ## Challenge
 
@@ -20,7 +20,7 @@ includes has to check the whole list which results in O(n) time performance.
 print: time: O(n) space: O(1)  
 print has to get data from each item in the list which results in O(n) time performance.  
 append: time: O(n) space: O(1) 
-appending without a tail pointed requires O(n) time perfomance  
+appending without a tail pointed requires O(n) time performance
 insertBefore: time: O(n) space: O(1) 
 insertBefore requires traversal of the list to find the target item making it O(n) time performance. 
 insertAfter: time: O(n) space: O(1) 
@@ -28,7 +28,7 @@ insertAfter requires traversal of the list to find the target item making it O(n
 kthFromEnd: time: O(n) space: O(1)
 kthFromEnd requires traversal of the list to find the Kth element making it O(n) time performance
 MergeLists: time: O(n) space: O(1)
-MergeLists requires traversal of the list together making it O(n) performance.  This is done is O(1) as no new node items or LinkedLists are created.
+MergeLists requires traversal of the list together making it O(n) performance.  This is done is O(1) as no new node items or LinkedLists are created.  
 isPalindrome: time: O(n)
 isPalindrome stack time: O(n) space O(n)
 isPalindrome(both) requires traversal of the list, making them both O(n) performance.  isPalindrome stack uses a stack datas tructure to hold the nodes making its space O(n)
@@ -37,7 +37,7 @@ isPalindrome(both) requires traversal of the list, making them both O(n) perform
 ## API
 ```void insert(int value)``` Takes in a integer value as a parameter.   
 ```boolean includes(int value)``` Takes in an integer value as a parameter and returns a boolean(true or false).  
-```String print()``` Takes in no parmeters and returns a String which lists all the nodes.  
+```String print()``` Takes in no parameters and returns a String which lists all the nodes.
 ```void append(int value)``` Takes in an integer value as a parameter.   
 ```boolean insertBefore(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
 ```boolean insertAfter(int target, int value)``` Takes in integers as the target, value and returns a boolean if it was inserted successfully.  
