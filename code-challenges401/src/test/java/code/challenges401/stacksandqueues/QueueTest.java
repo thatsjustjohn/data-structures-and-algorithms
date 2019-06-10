@@ -31,6 +31,14 @@ public class QueueTest {
         assertEquals(5, queue.front.value);
         assertEquals(-5, queue.back.value);
     }
+    @Test
+    public void test_enqueue_dequeue_enqueue() {
+        Queue queue = new Queue();
+        queue.enqueue(5);
+        queue.dequeue();
+        queue.enqueue(5);
+        assertEquals(5, queue.front.value);
+    }
 
     @Test
     public void dequeue() {

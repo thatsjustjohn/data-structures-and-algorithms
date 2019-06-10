@@ -35,10 +35,7 @@ public class Stack {
 
     // This function returns true is the stack is empty, otherwise false.
     public boolean isEmpty(){
-        if(top == null){
-            return true;
-        }
-        return false;
+        return top == null ? true : false;
     }
 
     // This function returns the string of the stack

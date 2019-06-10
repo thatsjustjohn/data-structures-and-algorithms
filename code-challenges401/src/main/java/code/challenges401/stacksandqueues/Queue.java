@@ -29,6 +29,8 @@ public class Queue {
         // This function removes(pops) an item from the stack
         Node temp = front;
         front = temp.next;
+        // Reset back point for one item dequeue
+        if(front == null) back = null;
         return temp.value;
     }
 
@@ -40,10 +42,7 @@ public class Queue {
 
     // This function returns true is the queue is empty, otherwise false.
     public boolean isEmpty(){
-        if(front == null){
-            return true;
-        }
-        return false;
+        return front == null ? true : false;
     }
 
     // This function returns the string of the queue
