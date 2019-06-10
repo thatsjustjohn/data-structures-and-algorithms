@@ -1,8 +1,7 @@
 # data-structures-and-algorithms
 CF 301 / 401
-will expand on this later
+These are a list of the names of the challenges and link for each.
 
-apparently this needs links for all the challenges which was never described in 301 which this is for.  Go figure.
 Links to Challenges
 ## 301
 1. [For-each](https://github.com/thatsjustjohn/data-structures-and-algorithms/tree/master/code-challenges/for-each)
@@ -21,4 +20,4 @@ Links to Challenges
 14. [Combo](https://github.com/thatsjustjohn/data-structures-and-algorithms/tree/master/code-challenges/combo)
 
 ## 401
-### [All Future code Challenges](https://github.com/thatsjustjohn/data-structures-and-algorithms/blob/master/code-challenges401/README.md)
+1. [All Future code Challenges](https://github.com/thatsjustjohn/data-structures-and-algorithms/blob/master/code-challenges401/README.md)
