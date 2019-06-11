@@ -8,7 +8,7 @@ import java.util.EmptyStackException;
 public class Stack<T> {
     Node<T> top;
 
-    Stack(){
+    public Stack(){
         this.top = null;
     }
 

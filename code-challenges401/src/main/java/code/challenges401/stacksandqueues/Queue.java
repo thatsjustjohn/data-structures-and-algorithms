@@ -6,7 +6,7 @@ public class Queue<T> {
     Node<T> front;
     Node<T> back;
 
-    Queue(){
+    public Queue(){
         this.front = null;
         this.back = null;
     }
