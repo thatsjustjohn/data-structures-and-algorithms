@@ -17,7 +17,7 @@ Efficiency
 
 AnimalShelter:\
 enqueue: T: O(1)\
-dequeue: T: O(1)\
+dequeue: T: O(1)
 
 ## API
 AnimalShelter:\
