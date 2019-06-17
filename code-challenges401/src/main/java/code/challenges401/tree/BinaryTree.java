@@ -10,13 +10,18 @@ public class BinaryTree<T extends Comparable<T>> extends Tree<T> {
         super();
     }
 
+    public BinaryTree(T value){
+        super();
+        this.root = new BTNode<>(value);
+    }
+
     public ArrayList<Object> preOrder(){
         returnList = new ArrayList<>();
         preOrder(root);
         return returnList;
     }
 
-    public void preOrder(BTNode node){
+    private void preOrder(BTNode node){
         if(node == null) return;
         returnList.add(node.value);
         preOrder(node.left);
@@ -29,7 +34,7 @@ public class BinaryTree<T extends Comparable<T>> extends Tree<T> {
         return returnList;
     }
 
-    public void inOrder(BTNode node){
+    private void inOrder(BTNode node){
         if(node == null) return;
         inOrder(node.left);
         returnList.add(node.value);
@@ -42,7 +47,7 @@ public class BinaryTree<T extends Comparable<T>> extends Tree<T> {
         return returnList;
     }
 
-    public void postOrder(BTNode node){
+    private void postOrder(BTNode node){
         if(node == null) return;
         postOrder(node.left);
         postOrder(node.right);
@@ -50,6 +55,6 @@ public class BinaryTree<T extends Comparable<T>> extends Tree<T> {
     }
 
     public boolean isEmpty(){
-        return root == null ? true : false;
+        return this.root == null ? true : false;
     }
 }

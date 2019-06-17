@@ -21,6 +21,12 @@ public class BinarySearchTreeTest {
     }
 
     @Test
+    public void test_constructor2(){
+        BinarySearchTree bst = new BinarySearchTree(2);
+        assertEquals(2, bst.root.value);
+    }
+
+    @Test
     public void test_add() {
         BinarySearchTree bst = new BinarySearchTree();
         bst.add(5);

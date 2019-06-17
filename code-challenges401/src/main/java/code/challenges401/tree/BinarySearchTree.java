@@ -1,14 +1,24 @@
 package code.challenges401.tree;
 
+import code.challenges401.BinarySearch;
+
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
+
     BinarySearchTree(){
         super();
     }
-    public void add(T value){
-        root = add(value, root);
+
+    BinarySearchTree(T value){
+        this();
+        this.add(value);
     }
 
-    public BTNode add(T value, BTNode node){
+    public void add(T value){
+
+        this.root = add(value, root);
+    }
+
+    private BTNode add(T value, BTNode node){
         if(node == null){
             return new BTNode<>(value);
         }else if(node.value.compareTo(value) > 0){
@@ -23,7 +33,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
         return contains(value, root);
     }
 
-    public boolean contains(T value, BTNode node){
+    private boolean contains(T value, BTNode node){
         if(node == null){
             return false;
         }else if(node.value.compareTo(value) == 0){
