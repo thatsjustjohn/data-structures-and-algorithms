@@ -1,0 +1,60 @@
+package code.challenges401.tree;
+
+import java.util.ArrayList;
+
+public class BinaryTree<T extends Comparable<T>> extends Tree<T> {
+    BTNode<T> root;
+    ArrayList<Object> returnList;
+
+    public BinaryTree() {
+        super();
+    }
+
+    public BinaryTree(T value){
+        super();
+        this.root = new BTNode<>(value);
+    }
+
+    public ArrayList<Object> preOrder(){
+        returnList = new ArrayList<>();
+        preOrder(root);
+        return returnList;
+    }
+
+    private void preOrder(BTNode node){
+        if(node == null) return;
+        returnList.add(node.value);
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    public ArrayList<Object> inOrder(){
+        returnList = new ArrayList<>();
+        inOrder(root);
+        return returnList;
+    }
+
+    private void inOrder(BTNode node){
+        if(node == null) return;
+        inOrder(node.left);
+        returnList.add(node.value);
+        inOrder(node.right);
+    }
+
+    public ArrayList<Object> postOrder(){
+        returnList = new ArrayList<>();
+        postOrder(root);
+        return returnList;
+    }
+
+    private void postOrder(BTNode node){
+        if(node == null) return;
+        postOrder(node.left);
+        postOrder(node.right);
+        returnList.add(node.value);
+    }
+
+    public boolean isEmpty(){
+        return this.root == null ? true : false;
+    }
+}
