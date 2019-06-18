@@ -20,4 +20,4 @@ FizzBuzzTree: T: O(n) S: O(1)\
 FizzBuzzTree:\
 ```public static BinaryTree fizzBuzzTree(BinaryTree binaryTree)``` Takes in a binary tree and returns a binary tree.\
 ```public static void fizzBuzzTree(BTNode node)``` Takes in a binary tree node and returns nothing.  This function does a post order traversal and uses fizzbuzz to alter the nodes contents.\
-```public static Comparable fizzbuzz(Comparable value)``` This function takes in a value tests that it is an int and converts it to a fizz buzz format.\
+```public static Comparable fizzbuzz(Comparable value)``` This function takes in a value tests that it is an int and converts it to a fizz buzz format.
