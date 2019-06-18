@@ -4,11 +4,11 @@ import code.challenges401.BinarySearch;
 
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
 
-    BinarySearchTree(){
+    public BinarySearchTree(){
         super();
     }
 
-    BinarySearchTree(T value){
+    public BinarySearchTree(T value){
         this();
         this.add(value);
     }

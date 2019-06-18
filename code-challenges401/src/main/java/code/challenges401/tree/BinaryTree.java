@@ -15,6 +15,11 @@ public class BinaryTree<T extends Comparable<T>> extends Tree<T> {
         this.root = new BTNode<>(value);
     }
 
+    @Override
+    public BTNode<T> getRoot() {
+        return root;
+    }
+
     public ArrayList<Object> preOrder(){
         returnList = new ArrayList<>();
         preOrder(root);
