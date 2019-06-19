@@ -1,5 +1,8 @@
 package code.challenges401.tree;
 
+import code.challenges401.linkedlist.LinkedList;
+import code.challenges401.stacksandqueues.Queue;
+
 import java.util.ArrayList;
 
 public class BinaryTree<T extends Comparable<T>> extends Tree<T> {
@@ -57,6 +60,17 @@ public class BinaryTree<T extends Comparable<T>> extends Tree<T> {
         postOrder(node.left);
         postOrder(node.right);
         returnList.add(node.value);
+    }
+
+    public void breadthFirst(BinaryTree bt){
+        Queue<BTNode> q = new Queue();
+        q.enqueue(bt.root);
+        while(!q.isEmpty()){
+            BTNode node = q.dequeue();
+            System.out.println(node.value);
+            if(node.left != null) q.enqueue(node.left);
+            if(node.right != null) q.enqueue(node.right);
+        }
     }
 
     public boolean isEmpty(){

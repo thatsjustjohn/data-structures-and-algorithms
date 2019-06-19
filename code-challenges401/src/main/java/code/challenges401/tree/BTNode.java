@@ -13,6 +13,12 @@ public class BTNode<T extends Comparable<T>> extends Node<T> {
         this.value = value;
     }
 
+    public BTNode(T value, BTNode left, BTNode right){
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
+
     public BTNode<T> getLeft() {
         return this.left;
     }
