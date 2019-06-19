@@ -77,4 +77,13 @@ public class BinarySearchTreeTest {
         bst.add(1);
         assertTrue(bst.contains(1));
     }
+
+    @Test
+    public void test_breadthFirst() {
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.add(5);
+        bst.add(10);
+        bst.add(1);
+        bst.breadthFirst(bst);
+    }
 }
