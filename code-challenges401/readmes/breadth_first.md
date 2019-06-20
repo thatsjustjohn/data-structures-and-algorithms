@@ -15,7 +15,7 @@ Create a Queue to enqueue nodes onto.  When a node is dequeued, enqueue its poss
 Efficiency
 
 Time: O(n)
-Space: O(n)
+Space: O(1)
 
 ## API
 Binary Tree:\
