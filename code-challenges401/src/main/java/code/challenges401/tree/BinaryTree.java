@@ -73,6 +73,24 @@ public class BinaryTree<T extends Comparable<T>> extends Tree<T> {
         }
     }
 
+    public int findMaximumValue(BinaryTree bt){
+        if(bt.root == null) throw new IllegalArgumentException();
+        return findMaximumValueHelper(bt.root);
+
+    }
+
+    private int findMaximumValueHelper(BTNode node){
+        int max;
+        try{
+            max = (int) node.value;
+        }catch(ClassCastException e){
+            throw new IllegalArgumentException();
+        }
+        if(node.left != null) max = Math.max(max, findMaximumValueHelper(node.left));
+        if(node.right != null) max = Math.max(max, findMaximumValueHelper(node.right));
+        return max;
+    }
+
     public boolean isEmpty(){
         return this.root == null ? true : false;
     }
