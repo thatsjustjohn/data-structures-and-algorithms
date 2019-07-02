@@ -17,3 +17,4 @@ Below are links for all of the code challanges for 401.  Clicking on the name wi
 13. [[Breadth First]](../code-challenges401/readmes/breadth_first.md)[[White Board]](../code-challenges401/assets/breadth_first.jpg)[[Code]](../code-challenges401/src/main/java/code/challenges401/tree/BinaryTree.java)
 14. [[Find Max Value Tree]](../code-challenges401/readmes/breadth_first.md)[[White Board]](../code-challenges401/assets/find-maximum-value.jpg)[[Code]](../code-challenges401/src/main/java/code/challenges401/tree/BinaryTree.java)
 15. [[Insertion Sort]](../code-challenges401/readmes/sort.md)[[Lecture]](../code-challenges401/readmes/lecture-notes-insertionsort.md)[[Code]](../code-challenges401/src/main/java/code/challenges401/Sort.java)
+15. [[Insertion Sort]](../code-challenges401/readmes/sort.md)[[Lecture]](../code-challenges401/readmes/lecture-notes-mergesort.md)[[Code]](../code-challenges401/src/main/java/code/challenges401/Sort.java)

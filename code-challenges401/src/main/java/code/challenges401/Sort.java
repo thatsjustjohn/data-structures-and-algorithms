@@ -43,7 +43,7 @@ public class Sort {
     }
 
 
-    private static int[] merge(int[] leftArr ,int[] rightArr, int[] arr){
+    private static int[] merge(int[] leftArr , int[] rightArr, int[] arr){
         int i = 0;
         int j = 0;
         int k = 0;
