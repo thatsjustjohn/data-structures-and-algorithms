@@ -1,4 +1,4 @@
-# Stack and Queue
+# Trees
 
 This is an implementation of a Tree, Binary Tree, Binary Search Tree.  Below are a list of the methods
 
