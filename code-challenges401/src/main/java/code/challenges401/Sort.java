@@ -2,6 +2,8 @@ package code.challenges401;
 
 import org.apache.commons.math3.exception.NullArgumentException;
 
+import java.util.Arrays;
+
 public class Sort {
     // This function performs insertion sort on an array of ints.
     public static int[] insertionSort(int[] arr){
@@ -22,6 +24,44 @@ public class Sort {
             arr[j+1] = temp;
         }
         // Return the sorted array
+        return arr;
+    }
+
+    public static int[] mergeSort(int[] arr){
+        // Cannot call .length on null, this addresses passing in a null object
+        if(arr == null) throw new NullArgumentException();
+
+        int arrayLength = arr.length;
+
+        if(arrayLength > 1){
+           int[] leftArr = mergeSort(Arrays.copyOfRange(arr, 0, arrayLength/2));
+           int[] rightArr = mergeSort(Arrays.copyOfRange(arr, arrayLength/2, arrayLength));
+           merge(leftArr, rightArr, arr);
+        }
+
+        return arr;
+    }
+
+
+    private static int[] merge(int[] leftArr , int[] rightArr, int[] arr){
+        int i = 0;
+        int j = 0;
+        int k = 0;
+
+        while(i < leftArr.length && j < rightArr.length){
+            if(leftArr[i] <= rightArr[j]){
+                arr[k] = leftArr[i];
+                i++;
+            }else{
+                arr[k] = rightArr[j];
+                j++;
+            }
+            k++;
+
+            if(i == leftArr.length) System.arraycopy(rightArr, j, arr, k, rightArr.length);
+            else System.arraycopy(leftArr, i, arr, k, leftArr.length);
+        }
+
         return arr;
     }
 }
