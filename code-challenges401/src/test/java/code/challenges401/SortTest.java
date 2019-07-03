@@ -56,4 +56,29 @@ public class SortTest {
     public void test_mergeSort_two() {
         assertArrayEquals(new int[] {1,2}, Sort.mergeSort(new int[] {2,1}));
     }
+
+    @Test
+    public void test_quickSort_multiple() {
+        assertArrayEquals(new int[] {1,2,3,4,5}, Sort.quickSort(new int[] {5,4,3,2,1}));
+    }
+
+    @Test (expected = NullArgumentException.class)
+    public void test_quickSort_null() {
+        assertArrayEquals(new int[] {1,2,3,4,5}, Sort.quickSort(null));
+    }
+
+    @Test
+    public void test_quickSort_empty() {
+        assertArrayEquals(new int[] {}, Sort.quickSort(new int[] {}));
+    }
+
+    @Test
+    public void test_quickSort_one() {
+        assertArrayEquals(new int[] {1}, Sort.quickSort(new int[] {1}));
+    }
+
+    @Test
+    public void test_quickSort_two() {
+        assertArrayEquals(new int[] {1,2}, Sort.quickSort(new int[] {2,1}));
+    }
 }
