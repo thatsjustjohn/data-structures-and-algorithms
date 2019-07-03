@@ -13,11 +13,12 @@ Merge sort requires O(n) space, can be done in O(1).  But is a O(n log n) time c
 # Lecture Flow
 Merge sort is a very time efficient sorting Algorithm
    - In this demonstration we use recursion.
-       - Call mergeSort on the 2 smaller Arrays
-       - Merge the halves together putting the smaller number at the 2 halves on first until they are all empty.
+   - Call mergeSort on the 2 smaller Arrays
+   - Merge the halves together putting the smaller number at the 2 halves on first until they are all empty.
+
 Complexity
-    - Has a space complexity of O(n).
-    - Has a time complexity of O(n log n).
+   - Has a space complexity of O(n).
+   - Has a time complexity of O(n log n).
 
 # Diagram
 
