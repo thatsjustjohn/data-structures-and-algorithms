@@ -22,7 +22,7 @@ Complexity
 
 # Diagram
 
-![image](../code-challenges401/assets/insertionsort.jpg)
+![image](../assets/insertionsort.jpg)
 
 # Algorithm
 - Iterate over the entire array
