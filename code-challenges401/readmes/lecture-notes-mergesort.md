@@ -22,7 +22,7 @@ Complexity
 
 # Diagram
 
-![image](../code-challenges401/assets/mergesort.jpg)
+![image](../assets/mergesort.jpg)
 
 # Algorithm
 - Halve the array and recursively call mergeSort on each half.
