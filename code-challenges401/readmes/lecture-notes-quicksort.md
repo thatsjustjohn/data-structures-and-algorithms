@@ -22,7 +22,7 @@ Complexity
 
 # Diagram
 
-![image](../code-challenges401/assets/quicksort.jpg)
+![image](../assets/quicksort.jpg)
 
 # Algorithm
 - Get a pivot point.
