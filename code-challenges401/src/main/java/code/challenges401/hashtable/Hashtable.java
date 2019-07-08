@@ -1,18 +1,15 @@
 package code.challenges401.hashtable;
 
 import org.apache.commons.math3.exception.NullArgumentException;
-import org.apache.commons.math3.util.Pair;
-
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 
 class HashNode<K, V>
 {
     K key;
     V value;
-    
+
     public HashNode(K key, V value)
     {
         this.key = key;
