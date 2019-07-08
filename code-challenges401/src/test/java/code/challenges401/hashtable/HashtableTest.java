@@ -10,7 +10,7 @@ public class HashtableTest {
     @Test
     public void test_hashTable_init() {
         Hashtable hashtable = new Hashtable();
-        System.out.println(hashtable);
+        System.out.println(hashtable.hashtable);
     }
 
     @Test
@@ -18,6 +18,13 @@ public class HashtableTest {
         Hashtable hashtable = new Hashtable();
         System.out.println(hashtable.hash("Johnny Wint"));
     }
+
+    @Test
+    public void test_hashTable_get_empty() {
+        Hashtable hashtable = new Hashtable();
+        assertEquals(null, hashtable.get("John"));
+    }
+
 
     @Test
     public void test_hashTable_add() {
