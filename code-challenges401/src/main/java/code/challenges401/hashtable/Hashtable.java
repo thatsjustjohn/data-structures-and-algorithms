@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
+// It didn't like pairs so I did this new HashNode
 class HashNode<K, V>
 {
     K key;
@@ -34,7 +35,8 @@ public class Hashtable<K, V> {
 
     public V get(String key){
         List<HashNode<K,V>> bucket = hashtable[hash(key)];
-        return bucket.stream().filter(item -> item.key.equals(key)).findFirst().get().value;
+        if(bucket != null) return bucket.stream().filter(item -> item.key.equals(key)).findFirst().get().value;
+        else return null;
     }
 
     public boolean contains(String key){
