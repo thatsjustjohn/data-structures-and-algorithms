@@ -20,4 +20,5 @@ Below are links for all of the code challanges for 401.  Clicking on the name wi
 16. [[Merge Sort]](../code-challenges401/readmes/sort.md)[[Lecture]](../code-challenges401/readmes/lecture-notes-mergesort.md)[[Code]](../code-challenges401/src/main/java/code/challenges401/Sort.java)
 17. [[Quick Sort]](../code-challenges401/readmes/sort.md)[[Lecture]](../code-challenges401/readmes/lecture-notes-quicksort.md)[[Code]](../code-challenges401/src/main/java/code/challenges401/Sort.java)
 18. [[Hash Table]](../code-challenges401/readmes/hashtable.md)[[Code]](../code-challenges401/src/main/java/code/challenges401/hashtable/Hashtable.java)
+19. [[Repeated Word]](../code-challenges401/readmes/repeated_word.md)[[White Board]](../code-challenges401/assets/repeated_word.jpg)[[Code]](../code-challenges401/src/main/java/code/challenges401/RepeatedWord/RepeatedWord.java)
 
