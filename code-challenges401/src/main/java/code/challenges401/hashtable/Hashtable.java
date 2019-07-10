@@ -41,6 +41,7 @@ public class Hashtable<K, V> {
 
     public boolean contains(String key){
         List<HashNode<K,V>> bucket = hashtable[hash(key)];
+        if(bucket == null) return false;
         for(HashNode<K,V> hn : bucket){
             if(hn.key.equals(key)) return true;
         }
