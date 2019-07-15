@@ -22,4 +22,5 @@ Below are links for all of the code challanges for 401.  Clicking on the name wi
 18. [[Hash Table]](../code-challenges401/readmes/hashtable.md)[[Code]](../code-challenges401/src/main/java/code/challenges401/hashtable/Hashtable.java)
 19. [[Repeated Word]](../code-challenges401/readmes/repeated_word.md)[[White Board]](../code-challenges401/assets/repeated_word.jpg)[[Code]](../code-challenges401/src/main/java/code/challenges401/RepeatedWord/RepeatedWord.java)
 20. [[Tree Intersection]](../code-challenges401/readmes/treeintersection.md)[[White Board]](../code-challenges401/assets/treeintersection.jpg)[[Code]](../code-challenges401/src/main/java/code/challenges401/TreeIntersection/TreeIntersection.java)
+21. [[Left Join]](../code-challenges401/readmes/left_join.md)[[White Board]](../code-challenges401/assets/leftjoin.jpg)[[Code]](../code-challenges401/src/main/java/code/challenges401/LeftJoin/LeftJoin.java)
 
