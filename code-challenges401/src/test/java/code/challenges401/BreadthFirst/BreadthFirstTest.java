@@ -41,8 +41,8 @@ public class BreadthFirstTest {
         as.add(3);
         as.add(5);
         as.add(4);
-        as.add(6);
         as.add(7);
+        as.add(6);
         assertEquals(as,BreadthFirst.breadthFirst(one));
 
     }
