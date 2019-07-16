@@ -4,21 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-class GraphNode<V> {
-    V value;
-    HashMap<GraphNode<V>, Integer> neighbors;
-
-    public GraphNode(V value)
-    {
-        this.value = value;
-        neighbors = new HashMap<>();
-    }
-
-    public V getValue(){return this.value;}
-    public HashMap<GraphNode<V>, Integer> getNeighbors(){return this.neighbors;}
-
-}
-
 public class Graph<V> {
     ArrayList<GraphNode<V>> graph;
 
