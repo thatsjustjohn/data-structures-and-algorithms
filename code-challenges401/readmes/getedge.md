@@ -15,7 +15,7 @@ Efficiency
 Changing the structure from an Arraylist to a Hashmap for the graph and then storing the node's name as the key and the value being the node would speed up this process.
 
 GetEdge:\
-getEdge() : T: O(n + m * n)\
+getEdge() : T: O(m * n) m being the length of the array and n being the size of the graph.\
 
 
 ## API
